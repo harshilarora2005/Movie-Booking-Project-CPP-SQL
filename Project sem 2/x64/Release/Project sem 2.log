@@ -1,0 +1,5 @@
+﻿  project.cpp
+D:\Project sem 2\project.cpp(331,1): warning C4091: '': ignored on left of 'char' when no variable is declared
+D:\Project sem 2\project.cpp(332,23): error C2065: 'colon': undeclared identifier
+D:\Project sem 2\project.cpp(334,90): error C2065: 'colon': undeclared identifier
+D:\Project sem 2\project.cpp(476,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data

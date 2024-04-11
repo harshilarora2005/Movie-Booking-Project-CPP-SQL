@@ -1,0 +1,13 @@
+Movie: Dangal
+    x        x           x     x  x 
+       x  x     x  x     x  x  x  x 
+ x  x              x        x     x 
+       x  x  x  x  x        x  x    
+    x        x  x                 x 
+ x  x  x     x     x                
+ x        x  x     x     x  x       
+    x           x  x        x  x  x 
+    x  x  x  x  x  x  x     x     x 
+ x  x  x     x     x  x     x  x  x 
+       x  x                 x  x  x 
+       x  x  x     x        x  x    
