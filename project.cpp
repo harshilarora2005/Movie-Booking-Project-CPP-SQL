@@ -9,9 +9,16 @@
 #include <sstream>
 #include <memory>
 #include <mysql.h>
+#include <thread>
 #include <fstream>
 #include <cstdlib>
 using namespace std;
+void delay() {
+    this_thread::sleep_for(chrono::seconds(3));
+}
+void clear() {
+    system("cls");
+}
 class User {
 public:
     User(const string& username, const string& password) : username(username), password(password) {}
@@ -27,15 +34,17 @@ private:
 // Class representing a Booking
 class Booking {
 public:
-    Booking(const string& username, const string& state, const string& city, const string& film,
-        const string& price, const string& time, const string& hall, const vector<string>& seats,
-        const string& language, const string& date, const string& startTime, const string& endTime, double budget)
-        :username(username), state(state), city(city), film(film), price(price), time(time), hall(hall),
-        seats(seats), language(language), date(date), startTime(startTime), endTime(endTime), budget(budget) {}
     Booking() {
         budget = 0;
+        quantity = 0;
 
-    };
+    }
+    Booking(const string& username, const string& state, const string& city, const string& film,
+        const string& price, const string& time, const string& hall, const vector<string>& seats,
+        const string& language, const string& date, const string& startTime, const string& endTime, double budget, const int quan)
+        :username(username), state(state), city(city), film(film), price(price), time(time), hall(hall),
+        seats(seats), language(language), date(date), startTime(startTime), endTime(endTime), budget(budget) ,quantity(quan){}
+    
     string getUsername() const { return username; }
     string getState() const { return state; }
     string getCity() const { return city; }
@@ -236,6 +245,8 @@ public:
             string storedPassword = getPassword(username);
             if (storedPassword == password) {
                 cout << "Login successful! Welcome, " << username << "!\n";
+                delay();
+                clear();
                 return true;
             }
             else {
@@ -254,12 +265,78 @@ private:
 class BookingManager: public Booking {
 public:
     BookingManager(unique_ptr<Database> db) : db(move(db)) {}
-
     void bookTickets() {
         // Booking logic
-        
+        int n;
+        cout << "ENTER THE HALL YOU WANT TO WATCH IN:"<< endl;
+        cout << "1. PVR" << endl;
+        cout << "2. LOGIX" << endl;
+        cout << "3. CINEPOLIS" << endl;
+        cout << "4. INOX" << endl;
+        cout << "5. CINEMAX" << endl;
+        do {
+            cout << "ENTER CHOICE:";
+            cin >> n;
+            switch (n)
+            {
+            case 1:
+                hall = "PVR";
+                break;
+            case 2:
+                hall = "LOGIX";
+                break;
+            case 3:
+                hall = "CINEPOLIS";
+                break;
+            case 4:
+                hall = "INOX";
+                break;
+            case 5:
+                hall = "CINEMAX";
+                break;
+            default:
+                cout << "ENTER A VALID OPTION!" << endl;
+            }
+        }while (true);
         display(selectmovie());
-
+        cout << "ENTER THE LANGUAGE YOU WANT TO WATCH THE MOVIE IN:";
+        cout << "1. ENGLISH";
+        cout << "2. HINDI";
+        cout << "3. PUNJABI";
+        cout << "4. TELUGU";
+        do {
+            cout << "ENTER CHOICE:";
+            cin >> n;
+            switch (n)
+            {
+            case 1:
+                language = "English";
+                break;
+            case 2:
+                language = "Hindi";
+                break;
+            case 3:
+                language = "Punjabi";
+                break;
+            case 4:
+                language = "Telugu";
+                break;
+            default:
+                cout << "ENTER A VALID OPTION!" << endl;
+            }
+        } while (true);
+        price = db->get("movies", "price", "movie_name='" + film + "'");
+        endTime = db->get("movies", "length", "movie_name='" + film + "'");
+        cout << "PRICE TO PAY IS: " << price << endl;
+        delay();
+        cout << "PROCESSING PAYMENT......"<<endl<<endl;
+        delay();
+        cout << "THANKS FOR THE PAYMENT!"<<endl;
+        cout << "YOUR TICKET IS SAVED IN MY ORDERS TAB!" << endl << endl;;
+        cout << "EXITING MOVIE BOOKING.....";
+        delay();
+        clear();
+        return;
     }
     
     void getDetails() {
@@ -293,6 +370,10 @@ public:
                 break;
             }
         }
+        cout << "ENTER STATE:";
+        getline(cin, state);
+        cout << "ENTER CITY:";
+        getline(cin, city);
         //address thing idk...
     }
     bool isValidDate(const string& dateStr, const string& currentDateStr, int nDays) {
@@ -520,6 +601,8 @@ int main() {
 
             if (choice == 1) {
                 login.signup();
+                delay();
+                clear();
             }
             else if (choice == 2) {
                 if (login.login()) {
