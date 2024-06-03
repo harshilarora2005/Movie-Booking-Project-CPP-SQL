@@ -1,5 +1,21 @@
 ﻿  project.cpp
-D:\Project sem 2\project.cpp(331,1): warning C4091: '': ignored on left of 'char' when no variable is declared
-D:\Project sem 2\project.cpp(332,23): error C2065: 'colon': undeclared identifier
-D:\Project sem 2\project.cpp(334,90): error C2065: 'colon': undeclared identifier
-D:\Project sem 2\project.cpp(476,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Project sem 2\project.cpp(942,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Project sem 2\project.cpp(1166,2): warning C4102: 'choice': unreferenced label
+D:\Project sem 2\project.cpp(1864,59): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+D:\Project sem 2\project.cpp(1864,59): warning C4267:         with
+D:\Project sem 2\project.cpp(1864,59): warning C4267:         [
+D:\Project sem 2\project.cpp(1864,59): warning C4267:             _Ty=int
+D:\Project sem 2\project.cpp(1864,59): warning C4267:         ]
+D:\Project sem 2\project.cpp(1885,62): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+D:\Project sem 2\project.cpp(1885,62): warning C4267:         with
+D:\Project sem 2\project.cpp(1885,62): warning C4267:         [
+D:\Project sem 2\project.cpp(1885,62): warning C4267:             _Ty=int
+D:\Project sem 2\project.cpp(1885,62): warning C4267:         ]
+D:\Project sem 2\project.cpp(2611,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Project sem 2\project.cpp(2646,6): warning C4102: 'cafemenu2': unreferenced label
+  Generating code
+  1 of 1073 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Project sem 2.vcxproj -> D:\Project sem 2\x64\Release\Project sem 2.exe
