@@ -56,4 +56,19 @@ CineBliss is a C++ application designed to assist users in finding suitable ente
 #include <random> 
 #include <limits> 
 #include <map> 
-#include <algorithm> 
+#include <algorithm>
+
+```
+
+# File Structure
+- project.cpp = main project file.
+- movie_seats = folder for storing seating structure of halls and movies
+- Project sem 2.sln = visual studio solution file
+  
+# AUTHORS
+- [HARSHIL ARORA](https://github.com/harshilarora2005)
+- [HARSHIL CHAWLA](URL)
+- [DAKSH ARORA](URL)
+
+
+
