@@ -67,7 +67,7 @@ CineBliss is a C++ application designed to assist users in finding suitable ente
   
 # AUTHORS
 - [HARSHIL ARORA](https://github.com/harshilarora2005)
-- [HARSHIL CHAWLA](URL)
+- [HARSHIL CHAWLA](https://github.com/HarshilChawla)
 - [DAKSH ARORA](URL)
 
 
